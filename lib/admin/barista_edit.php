@@ -40,13 +40,13 @@
 
         // Remove it
         try {
-            removeFile('../../res/images/baristas/', $filenameToRemove);
+            removeFile('/var/www/html/images/baristas/', $filenameToRemove);
         } catch(Exception $e) {
             $warningMessage = $e->getMessage();
         }
         
         // Save the file to the directory
-        if(!saveFile('../../res/images/baristas/', $_FILES['file'], $filenameToSet)) {
+        if(!saveFile('/var/www/html/images/baristas/', $_FILES['file'], $filenameToSet)) {
             $fileError = true;
             $errorMessage = 'Unable to move the file';
         } else {

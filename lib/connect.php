@@ -51,9 +51,10 @@ function connectToDatabase() {
 	if ( mysqli_connect_errno() ) {
 		// If there is an error with the connection, stop the script and display the error.
 		echo 'Failed to connect to MySQL: ' . mysqli_connect_error();
+		die;
 	}
 
-	$connection->set_charset('utf8_general_ci');
+	$connection->set_charset('utf8');
 
 	return $connection;
 }

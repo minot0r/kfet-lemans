@@ -149,7 +149,7 @@
                         </div>
                         <div class="form-group col">
                             <label class="" for="i-product-image">Image du produit</label>
-                            <input class="form-control-file" type="file" id="i-product-image" name="image" required>
+                            <input class="form-control-file" type="file" id="i-product-image" name="image" accept="image/*" required>
                             <small class="form-text text-muted">Extensions valides : jpg, png</small>
                         </div>
                     </div>

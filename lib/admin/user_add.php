@@ -16,7 +16,7 @@
     require_once('../file.php');
 
     // Connect to the database
-    if(!$mysqli = connectToDatabase()) {
+    if(!($mysqli = connectToDatabase())) {
         $databaseError = true;
         $errorMessage = 'Unable to connect to the database';
         header('Location: ../../administrate_users.php?add_status=error');
@@ -68,7 +68,7 @@
                 }
 
                 // Move the bdlc icon to the barista folder
-                copy('../../res/icon.svg', '../../res/images/baristas/' . $photoName);
+                copy('/var/www/html/res/icon.svg', '/var/www/html/res/images/baristas/' . $photoName);
             }
         } else {
             header('Location: ../../administrate_users.php?add_status=error');

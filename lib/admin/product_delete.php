@@ -16,20 +16,16 @@
 
         // Get the name of the image
         $data = select($mysqli, 'products', array('image'), $_GET['id']);
-        $filenameToRemove = $data[0]['image'] . '.' . getFileExtansion($_FILES['file']['name']);
+        $filenameToRemove = $data[0]['image'];
 
         // Remove the image
-        removeFile('images/products/', $filenameToRemove);
+        removeFile('/var/www/html/res/images/products/', $filenameToRemove);
 
         // Delete from the database
         if($mysqli->query('DELETE FROM products WHERE id=' . htmlspecialchars($_GET['id']))) {
             header('Location: ../../administrate_products.php?delete_status=success');
         } else {
-            $databaseError = true;
-            echo $mysqli->error;
+            header('Location: ../../administrate_products.php?delete_status=error');
         }
     }
-
-    if($databaseError) header('Location: ../../administrate_products.php?delete_status=error');
-
 ?>

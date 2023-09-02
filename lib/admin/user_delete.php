@@ -25,7 +25,7 @@
             $photoName = $result->fetch_assoc()['photo'];
             $result->close();
 
-            unlink('../../res/images/baristas/' . $photoName);
+            unlink('/var/www/html/res/images/baristas/' . $photoName);
         }
 
         // Delete the barista if it exists

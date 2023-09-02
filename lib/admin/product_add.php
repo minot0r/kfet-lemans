@@ -25,7 +25,7 @@
         
         // Add the image
         $extansion = getFileExtansion($_FILES['image']['name']);
-        saveFile('../../res/images/products/', $_FILES['image'], $_POST['name'] . '.' . $extansion);
+        saveFile('/var/www/html/res/images/products/', $_FILES['image'], $_POST['name'] . '.' . $extansion);
 
         if(!insert($mysqli, 'products', array(
             array('key' => 'name', 'value' => $_POST['name']), 

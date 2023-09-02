@@ -35,13 +35,13 @@
 
         // Remove it
         try {
-            removeFile('../../res/images/products/', $filenameToRemove);
+            removeFile('/var/www/html/res/images/products/', $filenameToRemove);
         } catch(Exception $e) {
             $warningMessage = $e->getMessage();
         }
         
         // Save the file to the directory
-        if(!saveFile('../../res/images/products/', $_FILES['file'], $filenameToSet)) {
+        if(!saveFile('/var/www/html/res/images/products/', $_FILES['file'], $filenameToSet)) {
             $fileError = true;
             $errorMessage = 'Unable to move the file';
         } else {

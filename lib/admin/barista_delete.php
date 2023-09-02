@@ -18,7 +18,7 @@
             $photoName = $result->fetch_assoc()['photo'];
             $result->close();
 
-            unlink('../../res/images/baristas/' . $photoName);
+            unlink('/var/www/html/res/images/baristas/' . $photoName);
         }
 
         // Change the authorization level to 0

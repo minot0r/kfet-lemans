@@ -110,8 +110,6 @@ function insert($mysqli, $table, $values) {
     }
     $req .= ')';
 
-    var_dump($req);
-
     return $mysqli->query($req);
 }
 
